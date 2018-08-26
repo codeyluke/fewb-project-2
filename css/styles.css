@@ -1,0 +1,313 @@
+/* =================================
+  Base Styles
+==================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fafafa;
+  font: 400 16px/1.6 'Open Sans', sans-serif;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+h2, h3, a {
+  color: black;
+}
+
+h1, h2, h3, p, ul {
+  margin-top: 0;
+}
+
+.title, .name, .proj-title, .skills-title {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  font-weight: 700;
+  color: #f2f2f2;
+  transition: all .2s;
+}
+
+.main-nav a:hover {
+  background: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =================================
+  Base Layout Styles
+==================================== */
+
+/* ---- General Styles---- */
+.main-header, .title, .proj-title, .proj-descr, .contact-block {
+  text-align: center;
+}
+
+.title, .main-nav a, .footer-nav a {
+  text-transform: uppercase;
+}
+
+.name, .footer-name {
+  margin-bottom: 0;
+}
+
+/* ---- Font Styles---- */
+
+.name {
+  font-size: 1.5em;
+}
+
+.about, .proj-descr, .footer-name, .btn-back {
+  font-size: .875em;
+}
+
+.proj-title, .title, .contact-block p {
+  font-size: 1em;
+}
+
+.contact-block p, .about {
+  letter-spacing: .1em;
+}
+
+/* ---- Containers ---- */
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.main-header {
+  padding: 1em 0 2.5em;
+}
+
+.main-portfolio, .contact-block {
+  padding: 2.5em 0 2.5em;
+}
+
+.main-portfolio {
+  background: #fff;
+}
+
+.main-footer {
+  border-top: 1px solid lightgrey;
+  padding: 1em 0 1em;
+}
+
+
+/* Header / Nav */
+
+.about {
+  max-width: 75%;
+  margin: 1em auto;
+}
+
+/* Nav */
+
+.main-nav {
+  margin-bottom: 3em;
+}
+
+.main-nav li {
+    /* Used this instead of just putting inside the .main-nav a below is because so that the .main-nav li are block when we expand the viewport later */
+    display: block;
+    margin-bottom: .3125em;
+    /* 5px / 16px */
+}
+
+.main-nav a {
+  background: #fff;
+  display: block;
+  padding: .625em 0 .625em;
+  border-radius: 5px;
+}
+
+/* ---- Portfolio ---- */
+.title {
+  padding-bottom: 2.5em;
+}
+
+.proj-pic {
+  padding-top: .5em;
+}
+
+.proj-title {
+  padding-top: .5em;
+}
+
+/* ---- Contact ---- */
+
+/* ---- Footer---- */
+
+.footer-nav {
+  display: none;
+}
+
+.footer-name {
+  float: left;
+}
+
+.btn-back {
+  float: right;
+  text-transform: uppercase;
+}
+
+/* ---- ClearFix ---- */
+.cf::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* =================================
+  Media Queries
+==================================== */
+
+@media (min-width: 768px) {
+  .container{
+    max-width: 1025px;
+  }
+
+  /* Header */
+  .about {
+    float: left;
+    width: 60%;
+    text-align: left;
+    margin-top: 0;
+    padding-right: 1em;
+  }
+
+  .profile-container {
+    float: right;
+    width: 40%;
+  }
+
+  /* ---- Header / Nav ----*/
+  .main-nav li {
+    display: inline-block;
+  }
+
+  .main-nav li a {
+    background: initial;
+    padding: .3125em .625em;
+  }
+
+  .main-nav li {
+    margin-right: .5em;
+  }
+
+  .main-nav li+li {
+    margin-left: .5em;
+  }
+
+  .main-nav li:last-child {
+    margin-right: 0;
+  }
+
+  a:hover,
+  a:active {
+    color: #13527d;
+  }
+
+  .main-nav a:hover {
+    background: initial;
+  }
+
+  /* ---- Portfolio ----*/
+  .col {
+    float:left;
+    width: calc(100%/2);
+    padding-right: 1em;
+    height: 24em; /* This fixes the issue of the traveling app when we scale larger in width */
+  }
+
+  /* ---- Contact ----*/
+  .contact-block p {
+    max-width: 70%;
+    margin: 0 auto 1.5em auto;
+  }
+
+  /* ---- Footer ----*/
+  /* Hide the Back to Top button */
+  .btn-back {
+    display: none;
+  }
+
+  /* Shows the Footer Nav */
+  .footer-nav {
+    display: initial;
+  }
+
+  .footer-nav {
+    float: right;
+  }
+
+  .footer-nav li {
+    display: inline-block;
+    margin-right: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Sets Height of all portfolio image pics
+  gutter padding causes middle row of images to
+  shrink on three column layout. adding in height
+  for images fixes the issue. */
+
+    /* ---- Header ----*/
+  /* Header and Nav */
+  .main-header {
+    padding-top: 2.5em;
+  }
+
+  .name {
+    float: left;
+  }
+
+  .main-nav {
+    float: right;
+  }
+
+  .main-portfolio {
+    width: 90%;
+    background: white;
+    margin: 0 auto;
+  }
+
+  .profile-container {
+    /* This part is to clear the float between the .name and the .main-nav. Otherwise it will float in between those 2 classes. */
+    clear: both;
+  }
+
+  .about {
+    font-size: 1.2em;
+  }
+
+    /* ---- Portfolio ----*/
+  .col {
+    width: calc(100%/3);
+    height: 22rem;
+    padding-bottom: 2rem;
+  }
+
+  .main-portfolio img {
+    height: 183px;
+  }
+}
